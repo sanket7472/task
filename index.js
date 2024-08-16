@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { createUser, getUsers, allUsers, getUserById, updateUser, deleteUser, loginUser } from './controllers/user.js'
+import { createUser, getUsers, getUserById, updateUser, deleteUser, loginUser } from './controllers/user.js'
 
 const app = express()
 app.use(express.json())
@@ -23,7 +23,6 @@ connectDB()
 //API
 app.post('/createuser', createUser)
 app.get('/getusers', getUsers)
-app.get('/allusers', allUsers)
 app.get('/getuser/:id', getUserById)
 app.put('/updateuser/:id', updateUser)
 app.delete('/deleteuser/:id', deleteUser)

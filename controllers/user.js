@@ -25,20 +25,7 @@ const getUsers = async (req, res) => {
         users: users
     })
 }
-const allUsers = async (req, res) => {
-    const users = await User.find()
-  const userData = {
-    name: users.name,
-    email: users.email,
-    age: users.age,
-    _id: users._id,
-    __v: users.__v
-  }
-    res.status(200).json({
-        message: 'Users fetched successfully',
-        users: userData
-    })
-}
+
 const getUserById = async (req, res) => {
     const user = await User.findById(req.params.id)
     const userData = {
@@ -117,4 +104,4 @@ const loginUser = async (req, res) => {
         user: user
     })
 }
-export { createUser, getUsers, allUsers, getUserById, updateUser, deleteUser, loginUser }
+export { createUser, getUsers, getUserById, updateUser, deleteUser, loginUser }
