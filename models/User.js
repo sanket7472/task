@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose'
 
+
 const userSchema = new Schema({
     name: {
         type: String,
@@ -17,7 +18,17 @@ const userSchema = new Schema({
     age: {
         type: Number,
         required: true
+    },
+    type: {
+        type: String,
+        enum: ['admin', 'user'],
+        default: 'user'
+    },
+    token: {
+        type: String,
+    
     }
+    
 })
 
 const User = model('User', userSchema)
